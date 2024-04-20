@@ -1,0 +1,385 @@
+@use 'partials'; //Module - loading the partial file as a module
+//et modul er en samling af variabler, mixins og funktioner som kan genbruges i andre filer og som henter koden fra _partial-filen som modul.
+
+//Generel styling
+
+body{
+    box-sizing: border-box;
+	margin: 0;
+	padding:0;
+    font-family: partials.$font;
+    background-color: partials.$bg-color;
+
+    /*Nesting - indsætter alle elementer som har direkte relation til øverste element af blokken*/
+        p{
+            font-size: 14pt;
+            color: partials.$text-color;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            font-weight: 600;
+            color: partials.$text-color;
+        }
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+
+/*Navigation*/
+
+header{
+    grid-column: 1/6; /*grid column start og slut på en linje i stedet for to*/
+    @include partials.flex($justify: space-between);
+    background-color: partials.$nav-color;
+
+}
+
+nav {
+    color: partials.$text-color;
+    height: 25px;
+	padding: 25px; 
+    @include partials.flex($justify: space-between);//mixin er blevet kaldt og $justify er ændret
+    
+    img {
+        width: 70px;
+        }
+    
+    ul {
+        @include partials.flex;
+        list-style-type: none;
+    }
+
+    a {
+        color: partials.$text-color;
+        padding: partials.$padding;
+        margin: partials.$padding;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    ul a:hover{
+       color: partials.$primary-color;
+    }
+}
+
+
+
+.openburger{
+    color: partials.$primary-color;
+}
+
+/*Header billede*/
+.heroimg{
+    position: relative;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+
+    .banner-tekst{
+        left: 5%;
+        top: 25%;
+        position: absolute;
+    }
+
+        h1{
+            font-size: 50px;
+
+        }
+       
+        a{
+            @include partials.cta-tekst;
+            position: absolute; //position: absolute; gør at elementet bliver fjernet fra flowet og kan placeres hvor som helst på siden. Det er dog stadig bundet til det nærmeste forældre element som har position: relative;. Hvis der ikke er nogen forældre element med position: relative; vil det blive bundet til body elementet. Det er nødvendigt at angive top, bottom, left eller right for at placere elementet korrekt. Og for at få teksten over billedet skal position: relative; tilføjes til det nærmeste forældre element og absolut til det element som skal placeres over billedet. Ellers vil det blive placeret i forhold til body elementet og ikke give det ønskede resultat.
+
+                &:hover{
+                    background-color: partials.$secondary-color;
+                    transition: 0.3s ease-in-out;
+                }
+        }
+
+        .heroimgmobil{
+            display: none;
+        }
+
+.heroimgcomputer{border-radius: 60px;}
+}
+
+/********Forside styling********/
+
+.sectionwrapper{position: relative; 
+
+.section-et { @include partials.space;
+    float: left;
+    margin-left: 100px;
+    position: absolute;
+        top: 5%;
+}
+}
+
+/****Slider***/
+.slideinfo{
+.slider{
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+}
+.tips{ 
+    position: absolute;
+    width: 200px;
+    height: 320px;
+    text-align: justify;
+    background-color:#ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.5s;
+    left: calc(50%-110px);
+    top: 0;
+}
+}
+
+
+
+
+
+/*CTA bokse*/
+
+
+
+
+/*Kontaktformular*/
+
+.kontakt-bg-img{
+    grid-column: 1/7;
+    background: linear-gradient(rgba(142, 142, 142, 0.8), rgba(142, 142, 142, 0.7)), url("img/meeting.jpg");
+    background-size: cover;
+}
+
+.kontaktform {
+    border-radius: 5px;
+    background-color: partials.$bg-color;
+    padding: 1.3em;
+    width: 50%;
+    margin: 4em auto; /*Centrerer elementet på siden*/
+
+        h3{
+            font-size: 25px;
+            margin-bottom: 0;
+            margin-left: 0.5em;
+        }
+
+        p{
+            margin-left: 1em;
+        }
+  }
+
+ .section-form{
+    display: flex;
+  }
+
+input[type=text], input[type=email],input[type=tel], select, textarea { /*vælger de emner/typer som skal berøres af nedenstående css*/
+    width: 100%;
+    font-size: 15px;
+    padding: 1em;
+    border: 2px solid partials.$secondary-color;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 0.5em 1em 1em 1em;
+    font-family: partials.$font;
+  
+  }
+  
+  input[type=submit] {
+    @include partials.cta-tekst;
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    margin: 0 1em;
+    cursor: pointer;
+        &:hover{
+            background-color: partials.$secondary-color;
+            transition: 0.3s ease-in-out;
+        }
+  }
+
+
+
+.visually-hidden{ /*Bootstrap defineret class som fjerner element fra skærm, men som stadig kan læses af skærmlæseren*/
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	padding: 0 !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	clip: rect(0,0,0,0) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+/*Footer styling*/
+
+footer:nth-of-type(1){
+    grid-column: 1/6;
+    background-color: partials.$footer-color;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1em 4em;
+
+    p, h4{   
+         color: partials.$nav-color;
+         line-height: 0.5;
+        }
+    h4{
+        font-size: 18px;
+    }
+    a{
+        color: partials.$primary-color;
+    }
+    .logo-footer{
+        width: 100px;
+        height: auto;
+    }
+
+}
+
+.footer-left{
+    grid-column: 1/2;
+}
+
+.footer-right{
+    grid-column: 2/3;
+    text-align: right;
+    margin: auto 0;
+}
+
+footer:nth-of-type(2){
+    grid-column: 1/6;
+    background-color: partials.$secondary-color;
+    text-align: center;
+
+    p{
+        color: partials.$bg-color;
+    }
+}
+
+
+/**********-----Mobile------**********/
+@media screen and (max-width: 900px){
+
+header:nth-of-type(1){
+    display: inline; //display: inline; gør at elementet fylder kun den plads som det behøver og vil derfor stå ved siden af andre elementer.
+}
+
+.mobile-nav {
+     color: partials.$primary-color;
+
+     .bars{
+        display: flex;
+     }
+
+    }
+
+.desktop-nav{
+    display: none;
+    height: auto;
+    border-top: 4px solid partials.$primary-color;
+
+    ul{
+        flex-direction: column;
+    }
+    li{
+        display: flex;
+    }
+}
+
+.header-img{
+
+        .banner-tekst{
+            left: 5%;
+            top: 15%;
+        }
+       
+        h1{
+            font-size: 5vw;
+        }
+        p{
+            font-size: 4vw;
+        }
+
+        .bg-billede-desktop{
+            display: none;
+        }
+        .bg-billede-mobil{
+            display: initial;
+        }
+}
+
+main{
+
+    .cta-wrapper{
+        flex-direction: column;
+    }
+}
+
+.cta-1, .cta-2, .cta-3{
+    @include partials.cta-box($width:80%);
+
+        img{
+            width: 50%;
+        }
+}
+    
+.tekst{
+    grid-column: 1/8;
+    order: 2;
+    padding: 2em 2em 4em 2em;
+
+}
+
+.secondary-btn{
+    display: block;
+}
+
+.billede{
+    order: 1;
+    grid-column: 1/8;
+    height: 300px;
+}
+
+.kontaktform{
+    width: 80%;
+
+        h3, p{
+            margin-bottom: 0.5em;
+        }
+}
+
+.section-form{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  input[type=text], input[type=email],input[type=tel], select, textarea { /*vælger de emner/typer som skal berøres af nedenstående css*/
+    margin: 0.5em 0 1em 0;
+  
+  }
+  
+  input[type=submit] {
+    margin: 0;
+  }
+
+.footer-left{
+    grid-column: 1/3;
+    margin: 0 auto;
+}
+
+.footer-right{
+    grid-column: 1/3;
+    text-align: center;
+    margin: 2em auto 0 auto;
+}
+}
