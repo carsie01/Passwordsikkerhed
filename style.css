@@ -103,9 +103,6 @@ nav ul a:hover {
 }
 
 /********Forside styling********/
-main {
-  background-color: aquamarine;
-}
 
 .sectionwrapper {
   position: relative;
@@ -133,6 +130,13 @@ main {
   width: 200px;
   height: 320px;
   text-align: justify;
+  background-color:#ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  transition: 0.5s;
+  left: calc(50%-110px);
+  top: 0;
+}
 }
 
 /*CTA bokse*/
