@@ -16,7 +16,12 @@ body p {
   color: #272727;
   line-height: 1.5;
 }
-body h1, body h2, body h3, body h4, body h5, body h6 {
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
   font-weight: 600;
   color: #272727;
 }
@@ -28,7 +33,8 @@ img {
 
 /*Navigation*/
 header {
-  grid-column: 1/6; /*grid column start og slut på en linje i stedet for to*/
+  grid-column: 1/6;
+  /*grid column start og slut på en linje i stedet for to*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,7 +109,6 @@ nav ul a:hover {
 }
 
 /********Forside styling********/
-
 .sectionwrapper {
   position: relative;
 }
@@ -118,73 +123,47 @@ nav ul a:hover {
 }
 
 /****Slider***/
-.slider {
+.slideinfo {
+  background-color: #738075;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slideinfo .slider {
   position: relative;
   width: 100%;
   height: 370px;
   overflow: hidden;
 }
-
-.tips {
+.slideinfo .tips {
   position: absolute;
   width: 200px;
   height: 320px;
   text-align: justify;
-  background-color:#ffffff;
+  background-color: #318841;
   border-radius: 20px;
   padding: 20px;
   transition: 0.5s;
-  left: calc(50%-110px);
+  left: calc(50% - 110px);
   top: 0;
 }
+.slideinfo #next,
+.slideinfo #prev {
+  position: absolute;
+  top: 40%;
+  color: #318841;
+  background-color: aqua;
+  border: none;
+  font-size: xx-large;
+  left: 50px;
+}
+.slideinfo #next {
+  left: unset;
+  right: 50px;
 }
 
 /*CTA bokse*/
-.txt-img-section {
-  grid-column: 1/7;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-
-.tekst {
-  grid-column: 1/5;
-  background-color: #99b035;
-  padding: 2em 4em 4em 4em;
-}
-.tekst p {
-  color: #F5F5F5;
-}
-.tekst p:nth-of-type(4) {
-  margin-bottom: 3em;
-}
-.tekst h2 {
-  color: #F5F5F5;
-  text-align: left;
-}
-
-.secondary-btn {
-  background-color: transparent;
-  padding: 0.8em 1em;
-  border-radius: 8px;
-  color: #F5F5F5;
-  text-decoration: none;
-  text-align: center;
-  border: 2px solid #ffffff;
-}
-.secondary-btn:hover {
-  background-color: #ffffff;
-  color: #99b035;
-  transition: 0.3s ease-in-out;
-}
-
-.billede {
-  grid-column: 5/8;
-  background-image: url(img/presentation.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 /*Kontaktformular*/
 .kontakt-bg-img {
   grid-column: 1/7;
@@ -197,7 +176,8 @@ nav ul a:hover {
   background-color: #F5F5F5;
   padding: 1.3em;
   width: 50%;
-  margin: 4em auto; /*Centrerer elementet på siden*/
+  margin: 4em auto;
+  /*Centrerer elementet på siden*/
 }
 .kontaktform h3 {
   font-size: 25px;
@@ -212,7 +192,12 @@ nav ul a:hover {
   display: flex;
 }
 
-input[type=text], input[type=email], input[type=tel], select, textarea { /*vælger de emner/typer som skal berøres af nedenstående css*/
+input[type=text],
+input[type=email],
+input[type=tel],
+select,
+textarea {
+  /*vælger de emner/typer som skal berøres af nedenstående css*/
   width: 100%;
   font-size: 15px;
   padding: 1em;
@@ -241,7 +226,8 @@ input[type=submit]:hover {
   transition: 0.3s ease-in-out;
 }
 
-.visually-hidden { /*Bootstrap defineret class som fjerner element fra skærm, men som stadig kan læses af skærmlæseren*/
+.visually-hidden {
+  /*Bootstrap defineret class som fjerner element fra skærm, men som stadig kan læses af skærmlæseren*/
   position: absolute !important;
   width: 1px !important;
   height: 1px !important;
@@ -261,7 +247,8 @@ footer:nth-of-type(1) {
   grid-template-columns: repeat(2, 1fr);
   padding: 1em 4em;
 }
-footer:nth-of-type(1) p, footer:nth-of-type(1) h4 {
+footer:nth-of-type(1) p,
+footer:nth-of-type(1) h4 {
   color: #F5F5F5;
   line-height: 0.5;
 }
@@ -336,13 +323,17 @@ footer:nth-of-type(2) p {
   main .cta-wrapper {
     flex-direction: column;
   }
-  .cta-1, .cta-2, .cta-3 {
+  .cta-1,
+  .cta-2,
+  .cta-3 {
     background-color: #ffffff;
     width: 80%;
     padding: 2em;
     margin: 2em auto;
   }
-  .cta-1 img, .cta-2 img, .cta-3 img {
+  .cta-1 img,
+  .cta-2 img,
+  .cta-3 img {
     width: 50%;
   }
   .tekst {
@@ -361,14 +352,20 @@ footer:nth-of-type(2) p {
   .kontaktform {
     width: 80%;
   }
-  .kontaktform h3, .kontaktform p {
+  .kontaktform h3,
+  .kontaktform p {
     margin-bottom: 0.5em;
   }
   .section-form {
     display: flex;
     flex-direction: column;
   }
-  input[type=text], input[type=email], input[type=tel], select, textarea { /*vælger de emner/typer som skal berøres af nedenstående css*/
+  input[type=text],
+  input[type=email],
+  input[type=tel],
+  select,
+  textarea {
+    /*vælger de emner/typer som skal berøres af nedenstående css*/
     margin: 0.5em 0 1em 0;
   }
   input[type=submit] {
