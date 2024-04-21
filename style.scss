@@ -132,8 +132,7 @@ nav {
 
 /****Slider***/
 .slideinfo {
-    background-color: #738075;
-   min-height: 100vh;
+    background-color: #F5F5F5;
    display: flex;
    align-items: center;
    justify-content: center;
@@ -141,7 +140,7 @@ nav {
 
     .slider {
         position: relative;
-        width: 100%;
+        width: 500%;
         height: 370px;
         overflow: hidden;
     }
@@ -151,7 +150,7 @@ nav {
         width: 200px;
         height: 320px;
         text-align: justify;
-        background-color: #318841;
+        background-color: #D4EA69;
         border-radius: 20px;
         padding: 20px;
         transition: 0.5s;
@@ -163,9 +162,13 @@ nav {
     #prev {
         position: absolute;
         top: 40%;
-        color: #318841;
-        background-color: aqua;
-        border: none;
+        color: #D4EA69;
+        background-color: transparent;
+        border-radius: 100px;
+        border-color:  #D4EA69;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 10px;
         font-size: xx-large;
         left: 50px;
 
