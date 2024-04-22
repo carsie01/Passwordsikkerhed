@@ -18,7 +18,7 @@ Those declared in blocks ({}) are usually local, and can only be accessed within
     justify-content: $justify;
     align-items: $align;
 }
-@mixin space($width:700px){
+@mixin space($width:600px){
     width: $width;
     padding: 7px;
     margin: 10px auto;
