@@ -9,7 +9,6 @@ body {
   padding: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #F5F5F5;
-  /*Nesting - indsætter alle elementer som har direkte relation til øverste element af blokken*/
 }
 body p {
   font-size: 14pt;
@@ -34,7 +33,6 @@ img {
 /*Navigation*/
 header {
   grid-column: 1/6;
-  /*grid column start og slut på en linje i stedet for to*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,7 +72,7 @@ nav ul a:hover {
   color: #D4EA69;
 }
 
-/*Header billede*/
+/*Hero billede*/
 .heroimg {
   position: relative;
   margin-left: 50px;
@@ -111,6 +109,7 @@ nav ul a:hover {
 /********Forside styling********/
 .sectionwrapper {
   position: relative;
+  min-height: 100vh;
 }
 .sectionwrapper .section-et {
   width: 700px;
@@ -124,28 +123,25 @@ nav ul a:hover {
 
 /****Slider***/
 .slideinfo {
-  background-color: #F5F5F5;
+  background-color: transparent;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 80vh;
 }
 .slideinfo .slider {
   position: relative;
   width: 500%;
   height: 370px;
-  overflow: hidden;
 }
 .slideinfo .tips {
   position: absolute;
-  width: 200px;
-  height: 320px;
+  width: 300px;
+  height: 420px;
   text-align: justify;
   background-color: #D4EA69;
   border-radius: 20px;
   padding: 20px;
   transition: 0.5s;
   left: calc(50% - 110px);
-  top: 0;
 }
 .slideinfo #next,
 .slideinfo #prev {
@@ -159,11 +155,11 @@ nav ul a:hover {
   padding-right: 15px;
   padding-bottom: 10px;
   font-size: xx-large;
-  left: 50px;
+  left: 100px;
 }
 .slideinfo #next {
   left: unset;
-  right: 50px;
+  right: 100px;
 }
 
 /*CTA bokse*/

@@ -1,7 +1,4 @@
-@use 'partials'; //Module - loading the partial file as a module
-//et modul er en samling af variabler, mixins og funktioner som kan genbruges i andre filer og som henter koden fra _partial-filen som modul.
-
-//Generel styling
+@use 'partials'; 
 
 body {
     box-sizing: border-box;
@@ -10,7 +7,6 @@ body {
     font-family: partials.$font;
     background-color: partials.$bg-color;
 
-    /*Nesting - indsætter alle elementer som har direkte relation til øverste element af blokken*/
     p {
         font-size: 14pt;
         color: partials.$text-color;
@@ -38,7 +34,6 @@ img {
 
 header {
     grid-column: 1/6;
-    /*grid column start og slut på en linje i stedet for to*/
     @include partials.flex($justify: space-between);
     background-color: partials.$nav-color;
 
@@ -48,7 +43,7 @@ nav {
     color: partials.$text-color;
     height: 25px;
     padding: 25px;
-    @include partials.flex($justify: space-between); //mixin er blevet kaldt og $justify er ændret
+    @include partials.flex($justify: space-between);
 
     img {
         width: 70px;
@@ -79,7 +74,7 @@ nav {
     color: partials.$primary-color;
 }
 
-/*Header billede*/
+/*Hero billede*/
 .heroimg {
     position: relative;
     margin-left: 50px;
@@ -99,7 +94,7 @@ nav {
 
     a {
         @include partials.cta-tekst;
-        position: absolute; //position: absolute; gør at elementet bliver fjernet fra flowet og kan placeres hvor som helst på siden. Det er dog stadig bundet til det nærmeste forældre element som har position: relative;. Hvis der ikke er nogen forældre element med position: relative; vil det blive bundet til body elementet. Det er nødvendigt at angive top, bottom, left eller right for at placere elementet korrekt. Og for at få teksten over billedet skal position: relative; tilføjes til det nærmeste forældre element og absolut til det element som skal placeres over billedet. Ellers vil det blive placeret i forhold til body elementet og ikke give det ønskede resultat.
+        position: absolute; 
 
         &:hover {
             background-color: partials.$secondary-color;
@@ -120,6 +115,8 @@ nav {
 
 .sectionwrapper {
     position: relative;
+    min-height: 100vh;
+
 
     .section-et {
         @include partials.space;
@@ -132,30 +129,30 @@ nav {
 
 /****Slider***/
 .slideinfo {
-    background-color: #F5F5F5;
+    background-color: transparent;
    display: flex;
-   align-items: center;
-   justify-content: center;
+   min-height: 80vh;
+  
    
 
     .slider {
         position: relative;
         width: 500%;
         height: 370px;
-        overflow: hidden;
+        
     }
 
     .tips {
         position: absolute;
-        width: 200px;
-        height: 320px;
+        width: 300px;
+        height: 420px;
         text-align: justify;
         background-color: #D4EA69;
         border-radius: 20px;
         padding: 20px;
         transition: 0.5s;
         left: calc(50% - 110px);
-        top: 0;
+       
     }
 
     #next,
@@ -170,13 +167,14 @@ nav {
         padding-right: 15px;
         padding-bottom: 10px;
         font-size: xx-large;
-        left: 50px;
+        left: 100px;
 
     }
 
     #next {
         left: unset;
-        right: 50px;
+        right: 100px;
+      
     }
 
 
