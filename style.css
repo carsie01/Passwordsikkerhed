@@ -30,17 +30,10 @@ img {
   height: auto;
 }
 
-.grids {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: minmax(50px, auto);
-}
-
 /*Navigation*/
 header {
-  grid-column: 1/6;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: #F5F5F5;
 }
@@ -50,7 +43,7 @@ nav {
   height: 25px;
   padding: 25px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 nav img {
@@ -72,6 +65,10 @@ nav a {
 }
 nav ul a:hover {
   color: #D4EA69;
+}
+
+.phonenav {
+  display: none;
 }
 
 .openburger {
@@ -96,7 +93,7 @@ nav ul a:hover {
   background-color: #D4EA69;
   padding: 0.8em 1em;
   border-radius: 8px;
-  color: #F5F5F5;
+  color: #272727;
   text-decoration: none;
   text-align: center;
   position: absolute;
@@ -181,62 +178,22 @@ nav ul a:hover {
   position: absolute;
   left: unset;
   right: 100px;
+  top: 0;
 }
 
 /*test kode boks*/
 /*få kode boks*/
 /*Footer styling*/
-footer:nth-of-type(1) {
-  grid-column: 1/6;
-  background-color: #E8E8E0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 1em 4em;
-}
-footer:nth-of-type(1) p,
-footer:nth-of-type(1) h4 {
-  color: #F5F5F5;
-  line-height: 0.5;
-}
-footer:nth-of-type(1) h4 {
-  font-size: 18px;
-}
-footer:nth-of-type(1) a {
-  color: #D4EA69;
-}
-footer:nth-of-type(1) .logo-footer {
-  width: 100px;
-  height: auto;
-}
-
-.footer-left {
-  grid-column: 1/2;
-}
-
-.footer-right {
-  grid-column: 2/3;
-  text-align: right;
-  margin: auto 0;
-}
-
-footer:nth-of-type(2) {
-  grid-column: 1/6;
-  background-color: #99b035;
-  text-align: center;
-}
-footer:nth-of-type(2) p {
-  color: #F5F5F5;
-}
-
 /**********-----Mobile------**********/
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 680px) {
   header:nth-of-type(1) {
     display: inline;
   }
-  .mobile-nav {
+  .phonenav {
     color: #D4EA69;
+    display: contents;
   }
-  .mobile-nav .bars {
+  .phonenav .bars {
     display: flex;
   }
   .desktop-nav {
@@ -265,66 +222,5 @@ footer:nth-of-type(2) p {
   }
   .header-img .bg-billede-mobil {
     display: initial;
-  }
-  main .cta-wrapper {
-    flex-direction: column;
-  }
-  .sectionkodekrav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-  .sectionkodekrav .section-to {
-    width: 600px;
-    padding: 7px;
-    margin: 10px auto;
-    position: absolute;
-    left: unset;
-    right: 100px;
-  }
-  .tekst {
-    grid-column: 1/8;
-    order: 2;
-    padding: 2em 2em 4em 2em;
-  }
-  .secondary-btn {
-    display: block;
-  }
-  .billede {
-    order: 1;
-    grid-column: 1/8;
-    height: 300px;
-  }
-  .kontaktform {
-    width: 80%;
-  }
-  .kontaktform h3,
-  .kontaktform p {
-    margin-bottom: 0.5em;
-  }
-  .section-form {
-    display: flex;
-    flex-direction: column;
-  }
-  input[type=text],
-  input[type=email],
-  input[type=tel],
-  select,
-  textarea {
-    /*vælger de emner/typer som skal berøres af nedenstående css*/
-    margin: 0.5em 0 1em 0;
-  }
-  input[type=submit] {
-    margin: 0;
-  }
-  .footer-left {
-    grid-column: 1/3;
-    margin: 0 auto;
-  }
-  .footer-right {
-    grid-column: 1/3;
-    text-align: center;
-    margin: 2em auto 0 auto;
   }
 }/*# sourceMappingURL=style.css.map */
