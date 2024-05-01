@@ -6,10 +6,7 @@ $primary-color: #D4EA69;
 $secondary-color: #99b035;
 $text-color: #272727;
 $padding: 0.5em;
-$font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-/*Variables declared at the top level of a stylesheet are global.
-Those declared in blocks ({}) are usually local, and can only be accessed within the block they were declared.b
-*/
+
 
 //Mixins er en måde at genbruge kode på. Man tager kode som bruges flere steder og samler det i en mixin.
 
@@ -27,6 +24,10 @@ Those declared in blocks ({}) are usually local, and can only be accessed within
 @mixin bg-img($width:100%){
     background-repeat: no-repeat;
 }
+@mixin omvendt{
+   color:$bg-color;
+  background-color:$text-color;
+}
 
 @mixin cta-tekst($bg-color: $primary-color, $btn-padding: 0.8em 1em){
     background-color: $bg-color;
@@ -35,6 +36,7 @@ Those declared in blocks ({}) are usually local, and can only be accessed within
     color: #272727;
     text-decoration: none;
     text-align: center;
+    font-weight: 600;
 }
 @mixin cta-box($width:20vw){
     background-color: #ffffff;
