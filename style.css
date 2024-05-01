@@ -344,7 +344,8 @@ h2 {
 /*få en kode boks*/
 /*Footer styling*/
 /**********-----Mobile------**********/
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 900px) {
+  
   header:nth-of-type(1) {
     display: inline;
   }
@@ -355,16 +356,9 @@ h2 {
   .phonenav .bars {
     display: flex;
   }
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #FFF;
-    padding: 10px;
-    top: 100%;
-    left: 0;
-}
 
-.phonenav:hover .dropdown-menu {
+
+.phonenav:hover{
     display: block;
 }
   .desktop-nav {
@@ -372,12 +366,7 @@ h2 {
     height: auto;
     border-top: 4px solid #D4EA69;
   }
-  .desktop-nav ul {
-    flex-direction: column;
-  }
-  .desktop-nav li {
-    display: flex;
-  }
+
   .header-img .banner-tekst {
     left: 5%;
     top: 15%;
@@ -385,13 +374,6 @@ h2 {
   .header-img h1 {
     font-size: 5vw;
   }
-  .header-img p {
-    font-size: 4vw;
-  }
-  .header-img .bg-billede-desktop {
-    display: none;
-  }
-  .header-img .bg-billede-mobil {
-    display: initial;
-  }
+  
+ 
 }/*# sourceMappingURL=style.css.map */

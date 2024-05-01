@@ -23,24 +23,20 @@
         <!--Burger menu-->
         <nav class="phonenav">
             <a href="index.html"><img src="img-password/logo.png" alt="logo af lodeord lås"></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Forside</a></li>
-                <li><a href="#">Om</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
+            <i class="navToggle bars fa-solid fa-bars fa-2xl"></i>
         </nav>
         <nav class="desktop-nav">
             <!--Desktop navigation-->
             <ul>
-                <li><a href="#">Forside</a></li>
-                <li><a href="#">Om</a></li>
+                <li><a href="#VærAtVide">Vær at vide</a></li>
+                <li><a href="#historie">Test din viden</a></li>
                 <a href="index.html"><img src="img-password/logo.png" alt="logo af kodeord lås"></a>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Kontakt</a></li>
+                <li><a href="#lavkode">Skab en kode</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
             </ul>
 
         </nav>
+
 
     </header>
     <!--Header-->
@@ -50,7 +46,7 @@
         <div class="banner-tekst">
             <h1>Datasikkerhed og adgangskoder</h1>
             <p>Test din viden om datasikkerhed og adgangskoder gennem en interaktive historie</p>
-            <a href="#">Test din viden</a>
+            <a href="#historie">Test din viden</a>
         </div>
     </header>
 
@@ -60,7 +56,7 @@
 
         <!--Slides-->
 
-        <section class="slideinfo">
+        <section class="slideinfo" id="VærAtVide">
             <section class="slider">
                 <section class="tips">
                     <h2>Stærke adgangskoder</h2>
@@ -103,20 +99,18 @@
         </section>
 
         <!--interaktiv historie-->
-        <section class="interaktivhistorie">
+        <section class="interaktivhistorie" id="historie">
             <section class="container">
-                <h2>Digital Security Interactive Story</h2>
+                <h2>Interaktive historie test</h2>
                 <section id="story" class="story">
-                    <p>Welcome to the Digital Security Interactive Story. You will follow the journey of Alex, a regular
-                        internet user, through various scenarios where you will make choices related to digital
-                        security.</p>
-                    <button class="start-btn" onclick="startStory()">Start Story</button>
+                    <p>Velkommen til den interaktive historie om digital sikkerhed. Du vil følge rejsen med Alex, en almindelig internetbruger, gennem forskellige situationer, hvor du skal træffe valg relateret til digital sikkerhed.</p>
+                    <button class="start-btn" onclick="startStory()">Start historien</button>
 
                 </section>
 
             </section>
             <!--tjek et kodeord-->
-        <section class="tjek-kode-bg">
+        <section class="tjek-kode-bg" id="lavkode">
             <section class="wrapper">
                 <section class="kode">
                     <input type="password" placeholder="Create password">

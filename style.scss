@@ -67,20 +67,17 @@ nav {
     }
 }
 .phonenav{
-    display: none;
-    .dropdown-menu {
+    .bars{
         display: none;
-        position: absolute;
-        background-color: #FFF;
-        padding: 10px;
-        top: 100%;
-        left: 0;
-    }
-    
-    .phonenav:hover .dropdown-menu {
-        display: block;
+        cursor: pointer;
     }
 }
+   
+    .toggleShow {
+        display: flex !important; //!important bruges for at sikre korrekt styling
+        flex-direction: column;
+          }
+
 
 
 
@@ -388,72 +385,337 @@ h2 {
 
 
 /**********-----Mobile------**********/
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 900px){
 
-    header:nth-of-type(1) {
-        display: inline; 
+    header:nth-of-type(1){
+        display: inline; //display: inline; gør at elementet fylder kun den plads som det behøver og vil derfor stå ved siden af andre elementer.
     }
-    .phonenav{
-        color: partials.$primary-color;
-        display: contents;
-
-        .bars {
+    
+    .phonenav {
+         color: partials.$primary-color;
+         
+    
+         .bars{
             display: flex;
+         }
+    
         }
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background-color: #FFF;
-            padding: 10px;
-            top: 100%;
-            left: 0;
-        }
-        
-        .phonenav:hover .dropdown-menu {
-            display: block;
-        }
-    }
-
-    .desktop-nav {
+    
+    .desktop-nav{
         display: none;
         height: auto;
         border-top: 4px solid partials.$primary-color;
-
-        ul {
+    
+        ul{
             flex-direction: column;
         }
-
-        li {
+        li{
             display: flex;
         }
     }
-
-    .header-img {
-
+    
+    .heroimg {
+        position: relative;
+        margin-left: 50px;
+        margin-right: 50px;
+    
+    
         .banner-tekst {
             left: 5%;
-            top: 15%;
+            top: 25%;
+            position: absolute;
+            width: 40%;
         }
-
+    
         h1 {
-            font-size: 5vw;
+            font-size: 10px;
+    
         }
-
-        p {
-            font-size: 4vw;
+    
+        a {
+            @include partials.cta-tekst;
+            position: absolute; 
+    
+            &:hover {
+                background-color: partials.$secondary-color;
+                transition: 0.3s ease-in-out;
+            }
         }
-
-        .bg-billede-desktop {
+    
+        .heroimgmobil {
             display: none;
         }
-
-        .bg-billede-mobil {
-            display: initial;
+    
+        .heroimgcomputer {
+            border-radius: 20px;
         }
+    }
+    
+    
+    /****Slider***/
+    .slideinfo {
+        background-color: transparent;
+       display: flex;
+       min-height: 80vh;
+       color: #E6F0D8;
+      
+      
+       
+    
+        .slider { 
+            position: relative;
+            width: 500%;
+            height: 370px;
+    padding-top: 150px;
+            
+        }
+    
+        .tips { 
+            position: absolute;
+            width: 300px;
+            height: 420px;
+            text-align: justify;
+            border-radius: 20px;
+            padding: 20px;
+            transition: 0.5s;
+            left: calc(50% - 110px);
+            box-shadow: 0 0 40px rgba(20, 20, 20, 0.725);
+            background-color: #E8E8E0;
+           .h2{font-size: 40px;
+        font-weight: 700;}
+        }
+    
+        #next,
+        #prev {
+            position: absolute;
+            top: 40%;
+            color: #D4EA69;
+            border-radius: 100px;
+            border-color: solid #D4EA69;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 10px;
+            font-size: xx-large;
+            left: 100px;
+    
+        }
+    
+        #next {
+            left: unset;
+            right: 100px;
+          
+        }
+    
+    }
+    
+    
+    
+        .section-to{  @include partials.space;
+            position: absolute;
+            left: unset;
+            right: 100px;
+            top: 0;
+          
+    
+        }
+    
+    
+    /* interaktiv historie*/
+    .interaktivhistorie{
+        background-image: url(img-password/Skærmbillede\ 2024-04-29\ kl.\ 13.02.14.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100vh;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #E6F0D8;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 40px rgba(115, 144, 94, 0.725);
+        margin-top: 150px;
+        margin-bottom: 300px;
+    }
+    .lock{  @include partials.flex;
+        width: 50px;
+    height: 50px;}
+    
+    h2 {
+        text-align: center;
+        color: #333;
+        font-weight: 600;
+        font-size: 40px;
+    }
+    
+    .story {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    
+    .start-btn {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #D4EA69;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .start-btn:hover {
+        background-color: #99b035;
+    }
+    .container {
+        text-align: center;
+    }
+    
+    .story {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    
+    .choice-btn {
+        padding: 20px;
+                margin: 20px;
+                border: none;
+                cursor: pointer;
+                max-width: 500px;
+                border-radius: 20px;
+                font-size: 16px;
+                background-color: #F0F0F0;
+                transition: background-color 0.3s ease;
+        
+            }
+    .choice-btn:hover{
+                background-color:#99b035;
+            }
+          
+            .next-btn {
+                padding: 10px 20px;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                background-color: #D4EA69;
+                color: #fff;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            
+            .next-btn:hover {
+                background-color: #99b035;
+            }
+            
+    
+    
+    
+    /*test kode boks*/
+    
+    .tjek-kode-bg {
+        @include partials.space;
+        min-height: 100vh;
+        background: transparent;
+      }
+      
+      .wrapper {
+        width: 500px;
+        overflow: hidden;
+        padding: 28px;
+        border-radius: 8px;
+        background: #E6F0D8;
+        box-shadow: 0 0 40px rgba(115, 144, 94, 0.725);
+        
+        
+        .kode {
+          height: 65px;
+          width: 450px;
+          position: relative;
+      
+          input {
+            width: 100%;
+            height: 100%;
+            outline: none;
+            padding: 0 17px;
+            font-size: 1.3rem;
+            border-radius: 5px;
+            border: 1px solid #999;
+      
+            &:focus {
+              padding: 0 16px;
+              border: 2px solid #91c74e;
+            }
+          }
+      
+          i {
+            right: 18px;
+            top: 50%;
+            font-size: 1.2rem;
+            color: #999;
+            cursor: pointer;
+            position: absolute;
+            transform: translateY(-50%);
+          }
+        }
+      
+        .indhold {
+          margin: 20px 0 10px;
+      
+          p {
+            color: #333;
+            font-size: 1.3rem;
+          }
+      
+          .krav-liste {
+            margin-top: 20px;
+      
+            li {
+              font-size: 1.3rem;
+              list-style: none;
+              display: flex;
+              align-items: center;
+              margin-bottom: 15px;
+      
+              i {
+                width: 20px;
+                color: #91c74e;
+                font-size: 0.6rem;
+              }
+      
+              &.valid i {
+                font-size: 1.2rem;
+                color: #91c74e;
+              }
+      
+              span {
+                margin-left: 12px;
+                color: #272727;
+              }
+      
+              &.valid span {
+                color: #91c74e;
+              }
+            }
+          }
+        }
+      }
+    
+    
+    /*få en kode boks*/
+    
+    
+    
+    
+    /*Footer styling*/
+    
+    
+    
     }
 
 
     
 
-}
+
 

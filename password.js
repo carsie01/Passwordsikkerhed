@@ -1,3 +1,14 @@
+// nav bar
+document.addEventListener("DOMContentLoaded", function() {
+    const navToggle = document.querySelector('.navToggle');
+    const desktopNav = document.querySelector('.desktop-nav');
+
+    navToggle.addEventListener('click', function() {
+        desktopNav.classList.toggle('toggleShow');
+    });
+});
+
+
 // Slider med tips til en god kode
 
 // hentning af html
@@ -89,84 +100,74 @@ let storyIndex = 0;
 const storyData = [
   
         {
-            text: "Alex receives an email with a link to reset his password for a social media account. What should he do?",
+            text: "Morten modtager en e-mail med et link til at nulstille hans adgangskode til en social mediekonto. Hvad bør han gøre?",
             choices: [
-                { text: "Click the link and reset the password.", consequence: "Alex's account gets hacked due to a phishing attack.", isCorrect: false },
-                { text: "Ignore the email and go directly to the social media website to reset the password.", consequence: "Alex avoids the phishing attack and successfully resets his password.", isCorrect: true }
+                { text: "Klik på linket og nulstil adgangskoden.", consequence: "Mortens's konto bliver hacket på grund af et phishing-angreb.", isCorrect: false },
+                { text: "Ignorer e-mailen og gå direkte til det sociale medies websted for at nulstille adgangskoden.", consequence: "Morten undgår phishing-angrebet og nulstiller succesfuldt sit kodeord.", isCorrect: true }
             ]
         },
-        // Fortsæt med at tilføje flere kapitler og valgmuligheder
-
-    
     {
-        text: "Alex receives an email with a link to reset his password for a social media account. What should he do?",
+        text: "Morten skal oprette en ny adgangskode. Hvilken er mest sikker?",
         choices: [
-            { text: "Click the link and reset the password.", consequence: "Alex's account gets hacked due to a phishing attack.", isCorrect: false },
-            { text: "Ignore the email and go directly to the social media website to reset the password.", consequence: "Alex avoids the phishing attack and successfully resets his password." ,isCorrect: true}
+            { text: "password123", consequence: "Morten's konto bliver let hacket." , isCorrect: false},
+            { text: "P@ssw0rd!", consequence: "Morten's kodeord er stærkt og sikkert.." ,isCorrect: true},
+            { text: "abc123", consequence: "Morten's konto bliver let hacket.", isCorrect: false }
         ]
     },
     {
-        text: "Alex needs to create a new password. Which one is the most secure?",
+        text: "Morten vil øge sikkerheden for sine onlinekonti. Hvad skal han gøre næste?",
         choices: [
-            { text: "password123", consequence: "Alex's account gets hacked easily." , isCorrect: false},
-            { text: "P@ssw0rd!", consequence: "Alex's password is strong and secure." ,isCorrect: true},
-            { text: "abc123", consequence: "Alex's account gets hacked easily.", isCorrect: false }
+            { text: "Aktivér totrinsbekræftelse.", consequence: "Morten's konti bliver mere sikre mod uautoriseret adgang.",isCorrect: true },
+            { text: "Fortsæt med kun at bruge adgangskoder til godkendelse.", consequence: "Morten's konti forbliver sårbare over for hacking.", isCorrect: false }
         ]
     },
     {
-        text: "Alex wants to enhance the security of his online accounts. What should he do next?",
+        text: "Morten modtager en pop-up-besked på et websted, der hævder, at han har vundet en pris. Hvad bør han gøre?",
         choices: [
-            { text: "Enable two-factor authentication.", consequence: "Alex's accounts become more secure against unauthorized access.",isCorrect: true },
-            { text: "Keep using only passwords for authentication.", consequence: "Alex's accounts remain vulnerable to hacking.", isCorrect: false }
+            { text: "Klik på pop-up'en for at kræve prisen.", consequence: "Morten's computer bliver inficeret" , isCorrect: false},
+            { text: "Luk pop-up'en og forlad webstedet.", consequence: "Morten undgår infektion med malware.",isCorrect: true }
         ]
     },
     {
-        text: "Alex receives a pop-up message on a website claiming he has won a prize. What should he do?",
+        text: "Morten modtager en venneanmodning fra nogen, han ikke kender på sociale medier. Hvad bør han gøre?",
         choices: [
-            { text: "Click the pop-up to claim the prize.", consequence: "Alex's computer gets infected with malware." , isCorrect: false},
-            { text: "Close the pop-up and leave the website.", consequence: "Alex avoids malware infection.",isCorrect: true }
+            { text: "Accepter venneanmodningen.", consequence: "Morten's personlige oplysninger kan kompromitteres af en fremmed.", isCorrect: false },
+            { text: "Ignorer venneanmodningen.", consequence: "Morten's personlige oplysninger forbliver sikre.",isCorrect: true }
         ]
     },
     {
-        text: "Alex receives a friend request from someone he doesn't know on social media. What should he do?",
+        text: "Morten modtager en e-mail fra sin bank, der beder om hans kontodetaljer. Hvad bør han gøre?",
         choices: [
-            { text: "Accept the friend request.", consequence: "Alex's personal information may be compromised by a stranger.", isCorrect: false },
-            { text: "Ignore the friend request.", consequence: "Alex's personal information remains secure.",isCorrect: true }
+            { text: "RBesvar e-mailen med sine kontodetaljer.", consequence: "Mortens bankkonto bliver hacket på grund af et phishing-forsøg.", isCorrect: false },
+            { text: "Ringe til sin bank ved hjælp af det officielle telefonnummer for at verificere anmodningen.", consequence: "Morten ved at det er et phishing-forsøg, og undlader at give sine kontodetaljer væk.",isCorrect: true }
         ]
     },
     {
-        text: "Alex receives an email from his bank asking for his account details. What should he do?",
+        text: "Morten vil sikkert bortskaffe sin gamle computer. Hvad bør han gøre?",
         choices: [
-            { text: "Reply to the email with his account details.", consequence: "Alex's bank account gets hacked due to a phishing attempt.", isCorrect: false },
-            { text: "Call his bank using the official phone number to verify the request.", consequence: "Alex confirms it's a phishing attempt and avoids giving away his account details.",isCorrect: true }
+            { text: "Smid den i skraldespanden.", consequence: "Mortens personlige data forbliver tilgængelig for enhver, der finder computeren." , isCorrect: false},
+            { text: "Slet harddisken og doner computeren til velgørenhed.", consequence: "Morten sikrer, at hans personlige data ikke er tilgængelig for andre.",isCorrect: true }
         ]
     },
     {
-        text: "Alex wants to securely dispose of his old computer. What should he do?",
+        text: "Morten vil beskytte sine onlinekonti mod uautoriseret adgang. Hvad bør han gøre?",
         choices: [
-            { text: "Throw it in the trash.", consequence: "Alex's personal data remains accessible to anyone who finds the computer." , isCorrect: false},
-            { text: "Wipe the hard drive and donate the computer to a charity.", consequence: "Alex ensures his personal data is not accessible to others.",isCorrect: true }
+            { text: "Brug den samme adgangskode til alle konti.", consequence: "Mortens konti er sårbare over for at blive kompromitteret, hvis ét kodeord bliver brudt.", isCorrect: false },
+            { text: "Brug unikke adgangskoder til hver konto.", consequence: "Mortens konti er mere sikre mod hacking forsøg." ,isCorrect: true}
         ]
     },
     {
-        text: "Alex wants to protect his online accounts from unauthorized access. What should he do?",
+        text: "Morten modtager en e-mail fra sin kollega med en mistænkelig vedhæftning. Hvad bør han gøre?",
         choices: [
-            { text: "Use the same password for all accounts.", consequence: "Alex's accounts are vulnerable to being compromised if one password is breached.", isCorrect: false },
-            { text: "Use unique passwords for each account.", consequence: "Alex's accounts are more secure against hacking attempts." ,isCorrect: true}
+            { text: "Åbn vedhæftningen for at se, hvad det er.", consequence: "Mortens computer bliver inficeret med malware.", isCorrect: false },
+            { text: "Slet e-mailen og underret sin kollega om den mistænkelige vedhæftning.", consequence: "Morten undgår malware-infektion og beskytter sin kollegas computer.",isCorrect: true }
         ]
     },
     {
-        text: "Alex receives an email from his colleague with a suspicious attachment. What should he do?",
+        text: "Morten vil tilgå sin onlinebankkonto fra et offentligt Wi-Fi-hotspot. Hvad bør han gøre?",
         choices: [
-            { text: "Open the attachment to see what it is.", consequence: "Alex's computer gets infected with malware.", isCorrect: false },
-            { text: "Delete the email and notify his colleague about the suspicious attachment.", consequence: "Alex avoids malware infection and protects his colleague's computer.",isCorrect: true }
-        ]
-    },
-    {
-        text: "Alex wants to access his online banking account from a public Wi-Fi hotspot. What should he do?",
-        choices: [
-            { text: "Connect to the public Wi-Fi and log in to his account.", consequence: "Alex's account credentials may be intercepted by hackers on the same network.", isCorrect: false },
-            { text: "Use a VPN (Virtual Private Network) to encrypt his connection before logging in.", consequence: "Alex's connection is secure, and his account credentials are protected from interception." ,isCorrect: true}
+            { text: "Forbind til det offentlige Wi-Fi og log ind på sin konto.", consequence: "Morten kontokredentialer kan blive opsnappe af hackere på det samme netværk.", isCorrect: false },
+            { text: "Brug en VPN (Virtual Private Network) til at kryptere sin forbindelse, før han logger ind.", consequence: "Morten's forbindelse er sikker, og hans kontokredentialer er beskyttet mod opsnapning." ,isCorrect: true}
         ]
     },
     
@@ -227,7 +228,7 @@ function makeChoice(consequence, isCorrect) {
         storyDiv.appendChild(nextButton);
     } else {
         const endMessage = document.createElement('p');
-        endMessage.textContent = 'Congratulations! You have completed the interactive story.';
+        endMessage.textContent = 'Tillykke! Du har fuldført den interaktive historie.';
         storyDiv.appendChild(endMessage);
     }
 }
