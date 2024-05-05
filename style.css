@@ -1,18 +1,12 @@
 @charset "UTF-8";
 /*Variabler*/
-/*Variables declared at the top level of a stylesheet are global.
-Those declared in blocks ({}) are usually local, and can only be accessed within the block they were declared.b
-*/
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #F5F5F5;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-
 }
-
 body p {
   font-size: 14pt;
   color: #272727;
@@ -72,10 +66,7 @@ nav ul a:hover {
 
 .phonenav {
   display: none;
-}
-
-.openburger {
-  color: #D4EA69;
+  cursor: pointer;
 }
 
 /*Hero billede*/
@@ -124,13 +115,13 @@ nav ul a:hover {
 .slideinfo .slider {
   position: relative;
   width: 500%;
-  height: 370px;
+  height: 570px;
   padding-top: 150px;
 }
 .slideinfo .tips {
   position: absolute;
   width: 300px;
-  height: 420px;
+  height: 620px;
   text-align: justify;
   border-radius: 20px;
   padding: 20px;
@@ -138,10 +129,10 @@ nav ul a:hover {
   left: calc(50% - 110px);
   box-shadow: 0 0 40px rgba(20, 20, 20, 0.725);
   background-color: #E8E8E0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+.slideinfo .tips .h2 {
+  font-size: 40px;
+  font-weight: 700;
 }
 .slideinfo #next,
 .slideinfo #prev {
@@ -188,16 +179,20 @@ nav ul a:hover {
   box-shadow: 0 0 40px rgba(115, 144, 94, 0.725);
   margin-top: 150px;
   margin-bottom: 300px;
- 
 }
-.lock{ width: 50px;
+
+.lock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
   height: 50px;
- }
+}
 
 h2 {
   text-align: center;
   color: #333;
-  font-weight: 600px;
+  font-weight: 600;
   font-size: 40px;
 }
 
@@ -345,35 +340,277 @@ h2 {
 /*Footer styling*/
 /**********-----Mobile------**********/
 @media screen and (max-width: 900px) {
-  
   header:nth-of-type(1) {
     display: inline;
   }
   .phonenav {
     color: #D4EA69;
-    display: contents;
-  }
-  .phonenav .bars {
     display: flex;
   }
-
-
-.phonenav:hover{
-    display: block;
-}
   .desktop-nav {
     display: none;
     height: auto;
     border-top: 4px solid #D4EA69;
   }
-
-  .header-img .banner-tekst {
-    left: 5%;
-    top: 15%;
+  .desktop-nav ul {
+    flex-direction: column;
   }
-  .header-img h1 {
-    font-size: 5vw;
+  .desktop-nav li {
+    display: flex;
   }
-  
- 
+  .heroimg {
+    position: relative;
+    margin-left: 50px;
+    margin-right: 50px;
+    min-height: 300px;
+  }
+  .heroimg .banner-tekst {
+    left: 10%;
+    top: 10%;
+    position: absolute;
+    width: 50%;
+  }
+  .heroimg h1 {
+    font-size: 20px;
+  }
+  .heroimg p {
+    font-size: 18px;
+  }
+  .heroimg a {
+    background-color: #D4EA69;
+    padding: 0.8em 1em;
+    border-radius: 8px;
+    color: #272727;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    position: absolute;
+  }
+  .heroimg a:hover {
+    background-color: #99b035;
+    transition: 0.3s ease-in-out;
+  }
+  .heroimg .heroimgmobil {
+    display: flex;
+    height: 400px;
+    border-radius: 60px;
+  }
+  .heroimg .heroimgcomputer {
+    display: none;
+  }
+  /****Slider***/
+  .slideinfo {
+    background-color: transparent;
+    display: flex;
+    min-height: 80vh;
+    color: #E6F0D8;
+  }
+  .slideinfo .slider {
+    position: relative;
+    width: 100%;
+    height: 370px;
+    padding-top: 150px;
+  }
+  .slideinfo .tips {
+    position: absolute;
+    width: 200px;
+    height: 420px;
+    text-align: justify;
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.5s;
+    left: calc(50% - 110px);
+    box-shadow: 0 0 40px rgba(20, 20, 20, 0.725);
+    background-color: #E8E8E0;
+  }
+  .slideinfo .tips .h2 {
+    font-weight: 700;
+  }
+  .slideinfo #next,
+  .slideinfo #prev {
+    position: absolute;
+    top: 40%;
+    color: #D4EA69;
+    border-radius: 100px;
+    border-color: solid #D4EA69;
+    padding-left: 10px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    font-size: xx-large;
+    left: 10px;
+  }
+  .slideinfo #next {
+    left: unset;
+    right: 10px;
+  }
+  .section-to {
+    width: 600px;
+    padding: 7px;
+    margin: 10px auto;
+    position: absolute;
+    left: unset;
+    right: 100px;
+    top: 0;
+  }
+  /* interaktiv historie*/
+  .interaktivhistorie {
+    background-image: url(img-password/Skærmbillede\ 2024-04-29\ kl.\ 13.02.14.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #E6F0D8;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(115, 144, 94, 0.725);
+    margin-top: 150px;
+    margin-bottom: 300px;
+  }
+  .lock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+  h2 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  .story {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .start-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D4EA69;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .start-btn:hover {
+    background-color: #99b035;
+  }
+  .container {
+    text-align: center;
+  }
+  .story {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .choice-btn {
+    padding: 20px;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+    max-width: 500px;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: #F0F0F0;
+    transition: background-color 0.3s ease;
+  }
+  .choice-btn:hover {
+    background-color: #99b035;
+  }
+  .next-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D4EA69;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .next-btn:hover {
+    background-color: #99b035;
+  }
+  /*test kode boks*/
+  .tjek-kode-bg {
+    width: 600px;
+    padding: 7px;
+    margin: 10px auto;
+    min-height: 100vh;
+    background: transparent;
+  }
+  .wrapper {
+    width: 500px;
+    overflow: hidden;
+    padding: 28px;
+    border-radius: 8px;
+    background: #E6F0D8;
+    box-shadow: 0 0 40px rgba(115, 144, 94, 0.725);
+  }
+  .wrapper .kode {
+    height: 65px;
+    width: 450px;
+    position: relative;
+  }
+  .wrapper .kode input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 17px;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    border: 1px solid #999;
+  }
+  .wrapper .kode input:focus {
+    padding: 0 16px;
+    border: 2px solid #91c74e;
+  }
+  .wrapper .kode i {
+    right: 18px;
+    top: 50%;
+    font-size: 1.2rem;
+    color: #999;
+    cursor: pointer;
+    position: absolute;
+    transform: translateY(-50%);
+  }
+  .wrapper .indhold {
+    margin: 20px 0 10px;
+  }
+  .wrapper .indhold p {
+    color: #333;
+    font-size: 1.3rem;
+  }
+  .wrapper .indhold .krav-liste {
+    margin-top: 20px;
+  }
+  .wrapper .indhold .krav-liste li {
+    font-size: 1.3rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .wrapper .indhold .krav-liste li i {
+    width: 20px;
+    color: #91c74e;
+    font-size: 0.6rem;
+  }
+  .wrapper .indhold .krav-liste li.valid i {
+    font-size: 1.2rem;
+    color: #91c74e;
+  }
+  .wrapper .indhold .krav-liste li span {
+    margin-left: 12px;
+    color: #272727;
+  }
+  .wrapper .indhold .krav-liste li.valid span {
+    color: #91c74e;
+  }
+  /*få en kode boks*/
+  /*Footer styling*/
 }/*# sourceMappingURL=style.css.map */
