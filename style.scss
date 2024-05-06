@@ -84,9 +84,9 @@ nav {
 
     .banner-tekst {
         left: 5%;
-        top: 25%;
+        top: 12%;
         position: absolute;
-        width: 40%;
+        width: 50%;
     }
 
     h1 {
@@ -135,7 +135,7 @@ padding-top: 150px;
     .tips { 
         position: absolute;
         width: 300px;
-        height: 620px;
+        height: 520px;
         text-align: justify;
         border-radius: 20px;
         padding: 20px;
@@ -145,15 +145,18 @@ padding-top: 150px;
         background-color: #E8E8E0;
        .h2{font-size: 40px;
     font-weight: 700;}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
 
     #next,
     #prev {
         position: absolute;
         top: 40%;
-        color: #D4EA69;
+        color: #272727;
         border-radius: 100px;
-        border-color: solid #D4EA69;
+        border-color: solid #272727;
         padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 10px;
@@ -401,8 +404,8 @@ h2 {
     
     .heroimg {
         position: relative;
-        margin-left: 50px;
-        margin-right: 50px;
+        margin-left: 30px;
+        margin-right: 30px;
         min-height: 300px;
     
     
@@ -434,7 +437,7 @@ h2 {
         .heroimgmobil {
             display: flex;
             height: 400px;
-            border-radius: 60px;
+            border-radius: 30px;
         }
     
         .heroimgcomputer {
@@ -460,17 +463,26 @@ h2 {
             height: 370px;
     padding-top: 150px;
     
+    
             
         }
     
         .tips { 
             position: absolute;
             width: 200px;
-            height: 320px;
+            height: 420px;
             text-align: justify;
             border-radius: 20px;
             padding: 20px;
             transition: 0.5s;
+            display: flex;
+            flex-direction: column;
+    align-items: center;
+
+   
+   
+
+
             left: calc(50% - 110px);
             box-shadow: 0 0 40px rgba(20, 20, 20, 0.725);
             background-color: #E8E8E0;
@@ -482,9 +494,9 @@ h2 {
         #prev {
             position: absolute;
             top: 40%;
-            color: #D4EA69;
+            color: #272727;
             border-radius: 100px;
-            border-color: solid #D4EA69;
+            border-color: solid #272727;
             padding-left: 10px;
             padding-right: 15px;
             padding-bottom: 5px;
@@ -498,6 +510,7 @@ h2 {
             right: 10px;
           
         }
+       
     
     }
     
@@ -528,7 +541,7 @@ h2 {
         border-radius: 10px;
         box-shadow: 0 0 40px rgba(115, 144, 94, 0.725);
         margin-top: 150px;
-        margin-bottom: 300px;
+        
     }
     .lock{  @include partials.flex;
         width: 50px;
@@ -611,10 +624,11 @@ h2 {
         @include partials.space;
         min-height: 100vh;
         background: transparent;
+        @include partials.flex;
       }
       
       .wrapper {
-        width: 500px;
+        max-width: 300px;
         overflow: hidden;
         padding: 28px;
         border-radius: 8px;
@@ -624,7 +638,7 @@ h2 {
         
         .kode {
           height: 65px;
-          width: 450px;
+          width: 250px;
           position: relative;
       
           input {
