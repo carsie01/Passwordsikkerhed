@@ -45,8 +45,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000;
- 
 }
 nav img {
   width: 70px;
@@ -359,11 +357,14 @@ h2 {
 @media screen and (max-width: 900px) {
   header:nth-of-type(1) {
     display: inline;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
   }
   .phonenav {
-    color: #D4EA69;
+    width: 100%;
+    background-color: #F5F5F5;
     display: flex;
-    z-index: 1;
   }
   .ul {
     list-style: none;
@@ -429,6 +430,7 @@ h2 {
     margin-left: 30px;
     margin-right: 30px;
     min-height: 300px;
+    z-index: -3;
   }
   .heroimg .banner-tekst {
     left: 10%;

@@ -36,9 +36,8 @@ header {
     @include partials.flex;
     background-color: partials.$nav-color;
     position: sticky;
-    z-index: 2;
-top: 0px;
-   
+    top: 0;
+    z-index: 10000;
 
 }
 
@@ -47,7 +46,6 @@ nav {
     height: 25px;
     padding: 25px;
     @include partials.flex;
-   
 
     img {
         width: 70px;
@@ -85,6 +83,7 @@ nav {
     position: relative;
     margin-left: 50px;
     margin-right: 50px;
+    z-index: -3;
 
 
     .banner-tekst {
@@ -393,35 +392,35 @@ h2 {
 /**********-----Mobile------**********/
 @media screen and (max-width: 900px){
 
-    header:nth-of-type(1) {
-        display: inline;
+    header:nth-of-type(1){
+        display: inline; 
         position: sticky;
-        z-index: 2;
-    top: 0;
-      }
-      
-      .phonenav {
-        color: $primary-color;
-        display: flex;
-        position: sticky;
-        z-index: 2;
-    top: 0;
-      }
-      
-      .ul {
-        list-style: none;
+        top: 0;
+        z-index: 10000;
+       
+    }
+    
+    .phonenav {width: 100%;
+        background-color:#F5F5F5 ;
+            display: flex;
+           
+           
+        }
+       .ul{list-style: none;
         float: right;
         padding-top: 5px;
         padding-left: 20px;
-        padding-right: 5px;
-        z-index: 1;
-      
-        li {
-          display: inline-block;
-          position: relative;
-          z-index: 1;
-      
-          a {
+        padding-right: 5px; 
+    z-index: 1;}
+
+        ul li {
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        
+        }
+    
+        ul li a {
             display: flex;
             justify-content: space-between;
             padding-bottom: 15px;
@@ -429,41 +428,41 @@ h2 {
             padding-left: 1px;
             text-decoration: none;
             text-align: center;
-      
-            &:hover {
-              background-color: #F5F5F5;
-            }
-      
-            ul.dropdown {
-              background: #F5F5F5;
-              position: absolute;
-              text-align: center;
-              width: 150px;
-              display: none;
-            }
-      
-            &:hover ul.dropdown {
-              display: block;
-            }
-          }
         }
-      }
-      
-      .link {
-        color: #272727;
-        padding-top: 20px;
-        padding-right: 30px;
-        padding-left: 30px;
-      }
-      
-      .lås {
-        z-index: 1;
-        padding-top: 15px;
-      }
-      
-      .kom {
-        height: 55px;
-      }
+        ul li ul.dropdown {
+            background: #F5F5F5;
+            position: absolute;
+            text-align: center;
+            width: 150px;
+            display: none;
+        }
+    
+        ul li a:hover {
+            background-color: #F5F5F5;
+    
+        }
+    
+        ul li:hover ul.dropdown {
+            display: block;
+        }
+    
+        .link {
+            color: #272727;
+            padding-top: 20px;
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+    
+    
+        .lås { z-index: 1;
+            padding-top: 15px;
+    
+        }
+    
+        .kom {
+            height: 55px;
+           
+        }
     .desktop-nav{
         display: none;
         height: auto;
@@ -475,7 +474,6 @@ h2 {
         li{
             display: flex;
         }
-        
     }
     
     .heroimg {
@@ -483,6 +481,7 @@ h2 {
         margin-left: 30px;
         margin-right: 30px;
         min-height: 300px;
+        z-index: -3;
     
     
         .banner-tekst {
