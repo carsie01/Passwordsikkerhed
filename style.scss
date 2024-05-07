@@ -387,7 +387,12 @@ h2 {
 
 /*Footer styling*/
 
-
+footer{
+    height: 50vh;
+    background-color: #E6F0D8;
+    @include partials.flex;
+    flex-direction: column;
+}
 
 /**********-----Mobile------**********/
 @media screen and (max-width: 900px){

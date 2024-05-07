@@ -353,6 +353,15 @@ h2 {
 
 /*få en kode boks*/
 /*Footer styling*/
+footer {
+  height: 50vh;
+  background-color: #E6F0D8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 /**********-----Mobile------**********/
 @media screen and (max-width: 900px) {
   header:nth-of-type(1) {

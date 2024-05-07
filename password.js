@@ -1,8 +1,6 @@
-// nav bar
 
 
-
-// Slider med tips til en god kode
+// Slider med tips til en god kode------------------------------------------
 
 // hentning af html
 let tips = document.querySelectorAll('.slideinfo .slider .tips');
@@ -50,46 +48,10 @@ prev.onclick = function () {
 
 
 
-// Test af kodeord
-// hentning af html
 
-const passwordInput = document.querySelector(".kode input");
-const eyeIcon = document.querySelector(".kode i");
-const requirementList = document.querySelectorAll(".krav-liste li");
-// Krav til kodeordet 
-// regular expressions and index of the requirement list item
-const requirements = [
-    { regex: /.{8,}/, index: 0 }, // Mindst 8 tegn
-    { regex: /[0-9]/, index: 1 }, // Mindst et tal
-    { regex: /[a-z]/, index: 2 }, // Mindst et lille bogstav
-    { regex: /[^A-Za-z0-9]/, index: 3 }, // Mindst et symbol
-    { regex: /[A-Z]/, index: 4 }, // Mindst et stort bogstav
-]
-passwordInput.addEventListener("keyup", (e) => {
-    requirements.forEach(item => {
-        // Check if the password matches the requirement regex
-        const isValid = item.regex.test(e.target.value);
-        const requirementItem = requirementList[item.index];
-        // Updating class and icon of requirement item if requirement matched or not
-        if (isValid) {
-            requirementItem.classList.add("valid");
-            requirementItem.firstElementChild.className = "fa-solid fa-check";
-        } else {
-            requirementItem.classList.remove("valid");
-            requirementItem.firstElementChild.className = "fa-solid fa-circle";
-        }
-    });
-});
-eyeIcon.addEventListener("click", () => {
-    // Toggle the password input type between "password" and "text"
-    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
-    // Update the eye icon class based on the password input type
-    eyeIcon.className = `fa-solid fa-eye${passwordInput.type === "password" ? "" : "-slash"}`;
-});
-
-// interaktiv historie
+// interaktiv historie------------------------------------------------------------
 let storyIndex = 0;
-
+// indhold til histrorie
 const storyData = [
   
         {
@@ -166,6 +128,7 @@ const storyData = [
     
 ];
 
+// next knep
 
     function startStory() {
         document.getElementById('story').innerHTML = '';
@@ -183,22 +146,22 @@ function displayStory() {
     const paragraph = document.createElement('p');
     paragraph.textContent = currentChapter.text;
     storyDiv.appendChild(paragraph);
-
+// tilføjelse af rigtig of forkert
     currentChapter.choices.forEach(choice => {
         const button = document.createElement('button');
         button.textContent = choice.text;
         button.classList.add('choice-btn');
         button.onclick = () => makeChoice(choice.consequence, choice.isCorrect);
         if (choice.isCorrect) {
-            button.classList.add('correct'); // Tilføj klassen 'correct' for det rigtige valg
+            button.classList.add('correct'); 
         } else {
-            button.classList.add('incorrect'); // Tilføj klassen 'incorrect' for det forkerte valg
+            button.classList.add('incorrect'); 
         }
         storyDiv.appendChild(button);
     });
 }
 
-
+// rød og grøn
 function makeChoice(consequence, isCorrect) {
     const storyDiv = document.getElementById('story');
     const paragraph = document.createElement('p');
@@ -206,14 +169,14 @@ function makeChoice(consequence, isCorrect) {
     storyDiv.appendChild(paragraph);
 
     if (isCorrect) {
-        paragraph.style.color = '#4CAF50'; // Grøn farve for korrekt svar
+        paragraph.style.color = '#E6F0D8'; 
     } else {
-        paragraph.style.color = '#F44336'; // Rød farve for forkert svar
+        paragraph.style.color = '#EE9696'; 
     }
 
     if (storyIndex < storyData.length - 1) {
         const nextButton = document.createElement('button');
-        nextButton.textContent = 'Next';
+        nextButton.textContent = 'Næste';
         nextButton.onclick = () => {
             storyIndex++;
             displayStory();
@@ -225,4 +188,38 @@ function makeChoice(consequence, isCorrect) {
         storyDiv.appendChild(endMessage);
     }
 }
+
+// Test af kodeord-------------------------------------------------------------
+// hentning af html
+
+const passwordInput = document.querySelector(".kode input");
+const eyeIcon = document.querySelector(".kode i");
+const requirementList = document.querySelectorAll(".krav-liste li");
+// Krav til kodeord 
+const requirements = [
+    { regex: /.{12,}/, index: 0 }, // Mindst 12 tegn
+    { regex: /[0-9]/, index: 1 }, // tal
+    { regex: /[a-z]/, index: 2 }, // lille bogstav
+    { regex: /[^A-Za-z0-9]/, index: 3 }, // sær symbol
+    { regex: /[A-Z]/, index: 4 }, // stort bogstav
+]
+passwordInput.addEventListener("keyup", (e) => {
+    requirements.forEach(item => {
+        // om man opfylder kravne
+        const isValid = item.regex.test(e.target.value);
+        const requirementItem = requirementList[item.index];
+        if (isValid) {
+            requirementItem.classList.add("valid");
+            requirementItem.firstElementChild.className = "fa-solid fa-check";
+        } else {
+            requirementItem.classList.remove("valid");
+            requirementItem.firstElementChild.className = "fa-solid fa-circle";
+        }
+    });
+});
+eyeIcon.addEventListener("click", () => {
+    passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    eyeIcon.className = `fa-solid fa-eye${passwordInput.type === "password" ? "" : "-slash"}`;
+});
+
 
