@@ -1,6 +1,6 @@
 
 
-// Slider med tips til en god kode------------------------------------------
+// Slider med tips til en god kode
 
 // hentning af html
 let tips = document.querySelectorAll('.slideinfo .slider .tips');
@@ -49,9 +49,9 @@ prev.onclick = function () {
 
 
 
-// interaktiv historie------------------------------------------------------------
+// interaktiv historie
 let storyIndex = 0;
-// indhold til histrorie
+
 const storyData = [
   
         {
@@ -128,13 +128,12 @@ const storyData = [
     
 ];
 
-// next knep
 
     function startStory() {
         document.getElementById('story').innerHTML = '';
         displayStory();
     
-        // Viser "Next" knappen når "Start Story" knappen klikkes
+        
         document.getElementById('next-btn').style.display = 'inline-block';
     }
     
@@ -146,7 +145,7 @@ function displayStory() {
     const paragraph = document.createElement('p');
     paragraph.textContent = currentChapter.text;
     storyDiv.appendChild(paragraph);
-// tilføjelse af rigtig of forkert
+
     currentChapter.choices.forEach(choice => {
         const button = document.createElement('button');
         button.textContent = choice.text;
@@ -161,7 +160,7 @@ function displayStory() {
     });
 }
 
-// rød og grøn
+
 function makeChoice(consequence, isCorrect) {
     const storyDiv = document.getElementById('story');
     const paragraph = document.createElement('p');
@@ -169,14 +168,14 @@ function makeChoice(consequence, isCorrect) {
     storyDiv.appendChild(paragraph);
 
     if (isCorrect) {
-        paragraph.style.color = '#E6F0D8'; 
+        paragraph.style.color = '#91C74E'; // Grøn farve for korrekt svar
     } else {
-        paragraph.style.color = '#EE9696'; 
+        paragraph.style.color = '#F44336'; // Rød farve for forkert svar
     }
 
     if (storyIndex < storyData.length - 1) {
         const nextButton = document.createElement('button');
-        nextButton.textContent = 'Næste';
+        nextButton.textContent = 'Next';
         nextButton.onclick = () => {
             storyIndex++;
             displayStory();
@@ -189,25 +188,26 @@ function makeChoice(consequence, isCorrect) {
     }
 }
 
-// Test af kodeord-------------------------------------------------------------
+// Test af kodeord
 // hentning af html
 
 const passwordInput = document.querySelector(".kode input");
 const eyeIcon = document.querySelector(".kode i");
 const requirementList = document.querySelectorAll(".krav-liste li");
-// Krav til kodeord 
+
 const requirements = [
-    { regex: /.{12,}/, index: 0 }, // Mindst 12 tegn
-    { regex: /[0-9]/, index: 1 }, // tal
-    { regex: /[a-z]/, index: 2 }, // lille bogstav
-    { regex: /[^A-Za-z0-9]/, index: 3 }, // sær symbol
-    { regex: /[A-Z]/, index: 4 }, // stort bogstav
+    { regex: /.{12,}/, index: 0 }, 
+    { regex: /[0-9]/, index: 1 }, 
+    { regex: /[a-z]/, index: 2 }, 
+    { regex: /[^A-Za-z0-9]/, index: 3 }, 
+    { regex: /[A-Z]/, index: 4 }, 
 ]
 passwordInput.addEventListener("keyup", (e) => {
     requirements.forEach(item => {
-        // om man opfylder kravne
+        
         const isValid = item.regex.test(e.target.value);
         const requirementItem = requirementList[item.index];
+        
         if (isValid) {
             requirementItem.classList.add("valid");
             requirementItem.firstElementChild.className = "fa-solid fa-check";
@@ -218,7 +218,9 @@ passwordInput.addEventListener("keyup", (e) => {
     });
 });
 eyeIcon.addEventListener("click", () => {
+    
     passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    
     eyeIcon.className = `fa-solid fa-eye${passwordInput.type === "password" ? "" : "-slash"}`;
 });
 
