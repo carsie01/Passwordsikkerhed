@@ -9,9 +9,7 @@ $padding: 0.5em;
 $font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 
-//Mixins er en måde at genbruge kode på. Man tager kode som bruges flere steder og samler det i en mixin.
-
-@mixin flex($justify: center, $align: center) { //$justify og $align er parametre som kan ændres når mixin'en kaldes.
+@mixin flex($justify: center, $align: center) { 
     display: flex;
     justify-content: $justify;
     align-items: $align;
@@ -40,7 +38,7 @@ $font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
 }
 @mixin cta-box($width:20vw){
-    background-color: #ffffff;
+    background-color: #F5F5F5;
     width: $width;
     padding: 2em;
     margin: 2em auto;
