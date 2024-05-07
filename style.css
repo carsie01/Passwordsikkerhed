@@ -351,7 +351,6 @@ h2 {
   color: #91c74e;
 }
 
-/*få en kode boks*/
 /*Footer styling*/
 footer {
   height: 50vh;
@@ -699,6 +698,14 @@ footer {
   .wrapper .indhold .krav-liste li.valid span {
     color: #91c74e;
   }
-  /*få en kode boks*/
   /*Footer styling*/
+  footer {
+    height: 50vh;
+    background-color: #E6F0D8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+  }
 }/*# sourceMappingURL=style.css.map */
