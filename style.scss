@@ -35,6 +35,10 @@ img {
 header {
     @include partials.flex;
     background-color: partials.$nav-color;
+    position: sticky;
+    z-index: 2;
+top: 0px;
+   
 
 }
 
@@ -43,6 +47,7 @@ nav {
     height: 25px;
     padding: 25px;
     @include partials.flex;
+   
 
     img {
         width: 70px;
@@ -200,7 +205,7 @@ padding-top: 150px;
     border-radius: 10px;
     box-shadow: 0 0 40px rgba(115, 144, 94, 0.725);
     margin-top: 150px;
-    margin-bottom: 300px;
+    margin-bottom: 100px;
 }
 .lock{  @include partials.flex;
     width: 50px;
@@ -281,11 +286,19 @@ h2 {
 
 .tjek-kode-bg {
     @include partials.space;
-    min-height: 100vh;
+    min-height: 130vh;
     background: transparent;
+    gap: 100px;
+  }
+  .tjekkodetekst{
+    margin: 30px;
+    margin-right: 40px;
+    display: inline;
+    
   }
   
   .wrapper {
+    margin-top: 100px;
     width: 500px;
     overflow: hidden;
     padding: 28px;
@@ -380,15 +393,77 @@ h2 {
 /**********-----Mobile------**********/
 @media screen and (max-width: 900px){
 
-    header:nth-of-type(1){
-        display: inline; //display: inline; gør at elementet fylder kun den plads som det behøver og vil derfor stå ved siden af andre elementer.
-    }
-    
-    .phonenav {
-         color: partials.$primary-color;
+    header:nth-of-type(1) {
+        display: inline;
+        position: sticky;
+        z-index: 2;
+    top: 0;
+      }
+      
+      .phonenav {
+        color: $primary-color;
+        display: flex;
+        position: sticky;
+        z-index: 2;
+    top: 0;
+      }
+      
+      .ul {
+        list-style: none;
+        float: right;
+        padding-top: 5px;
+        padding-left: 20px;
+        padding-right: 5px;
+        z-index: 1;
+      
+        li {
+          display: inline-block;
+          position: relative;
+          z-index: 1;
+      
+          a {
             display: flex;
+            justify-content: space-between;
+            padding-bottom: 15px;
+            padding-right: 1px;
+            padding-left: 1px;
+            text-decoration: none;
+            text-align: center;
+      
+            &:hover {
+              background-color: #F5F5F5;
+            }
+      
+            ul.dropdown {
+              background: #F5F5F5;
+              position: absolute;
+              text-align: center;
+              width: 150px;
+              display: none;
+            }
+      
+            &:hover ul.dropdown {
+              display: block;
+            }
+          }
         }
-    
+      }
+      
+      .link {
+        color: #272727;
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+      
+      .lås {
+        z-index: 1;
+        padding-top: 15px;
+      }
+      
+      .kom {
+        height: 55px;
+      }
     .desktop-nav{
         display: none;
         height: auto;
@@ -400,6 +475,7 @@ h2 {
         li{
             display: flex;
         }
+        
     }
     
     .heroimg {
@@ -450,7 +526,7 @@ h2 {
     /****Slider***/
     .slideinfo {
         background-color: transparent;
-       display: flex;
+       display: inline;
        min-height: 80vh;
        color: #E6F0D8;
       
@@ -462,6 +538,7 @@ h2 {
             width: 100%;
             height: 370px;
     padding-top: 150px;
+  
     
     
             
@@ -622,9 +699,15 @@ h2 {
     
     .tjek-kode-bg {
         @include partials.space;
-        min-height: 100vh;
+        flex-direction: column;
+        min-height: 110vh;
         background: transparent;
         @include partials.flex;
+      }
+      .tjekkodetekst{
+        margin: 30px;
+        margin-right: 40px;
+        display: inline;
       }
       
       .wrapper {

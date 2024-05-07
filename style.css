@@ -33,6 +33,9 @@ header {
   justify-content: center;
   align-items: center;
   background-color: #F5F5F5;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
 }
 
 nav {
@@ -42,6 +45,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10000;
+ 
 }
 nav img {
   width: 70px;
@@ -74,6 +79,7 @@ nav ul a:hover {
   position: relative;
   margin-left: 50px;
   margin-right: 50px;
+  z-index: -3;
 }
 .heroimg .banner-tekst {
   left: 5%;
@@ -181,7 +187,7 @@ nav ul a:hover {
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(115, 144, 94, 0.725);
   margin-top: 150px;
-  margin-bottom: 300px;
+  margin-bottom: 100px;
 }
 
 .lock {
@@ -266,11 +272,19 @@ h2 {
   width: 600px;
   padding: 7px;
   margin: 10px auto;
-  min-height: 100vh;
+  min-height: 130vh;
   background: transparent;
+  gap: 100px;
+}
+
+.tjekkodetekst {
+  margin: 30px;
+  margin-right: 40px;
+  display: inline;
 }
 
 .wrapper {
+  margin-top: 100px;
   width: 500px;
   overflow: hidden;
   padding: 28px;
@@ -349,6 +363,55 @@ h2 {
   .phonenav {
     color: #D4EA69;
     display: flex;
+    z-index: 1;
+  }
+  .ul {
+    list-style: none;
+    float: right;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 5px;
+    z-index: 1;
+  }
+  ul li {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    padding-right: 1px;
+    padding-left: 1px;
+    text-decoration: none;
+    text-align: center;
+  }
+  ul li ul.dropdown {
+    background: #F5F5F5;
+    position: absolute;
+    text-align: center;
+    width: 150px;
+    display: none;
+  }
+  ul li a:hover {
+    background-color: #F5F5F5;
+  }
+  ul li:hover ul.dropdown {
+    display: block;
+  }
+  .link {
+    color: #272727;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .lås {
+    z-index: 1;
+    padding-top: 15px;
+  }
+  .kom {
+    height: 55px;
   }
   .desktop-nav {
     display: none;
@@ -404,7 +467,7 @@ h2 {
   /****Slider***/
   .slideinfo {
     background-color: transparent;
-    display: flex;
+    display: inline;
     min-height: 80vh;
     color: #E6F0D8;
   }
@@ -545,11 +608,17 @@ h2 {
     width: 600px;
     padding: 7px;
     margin: 10px auto;
-    min-height: 100vh;
+    flex-direction: column;
+    min-height: 110vh;
     background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .tjekkodetekst {
+    margin: 30px;
+    margin-right: 40px;
+    display: inline;
   }
   .wrapper {
     max-width: 300px;

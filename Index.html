@@ -21,8 +21,18 @@
     <header>
 
         <!--Burger menu-->
-        <nav class="phonenav">
-            <a href="index.html"><img src="img-password/logo.png" alt="logo af lodeord lås"></a>
+        <nav class="phonenav" id="phoneNav">
+            <ul id="nb" class="navbar">
+                <li>
+                  <a class="lås"><img class="kom" src="img-password/logo.png" alt=""></a>
+                  <ul class="dropdown">
+                    <li><a href="#VærAtVide">Vær at vide</a></li>
+                    <li><a href="#historie">Test din viden</a></li>
+                    <li><a href="#lavkode">Test en kode</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="index.html">Tilbage til top</a></li>
+                  </ul>
+                </li>
             
         </nav>
         <nav class="desktop-nav">
@@ -111,7 +121,13 @@
             </section>
             <!--tjek et kodeord-->
         <section class="tjek-kode-bg" id="lavkode">
-            <section class="wrapper">
+            <section class="tjekkodetekst">
+            <h3>Et godt kodeord</h3>
+            <p>Det er vigtigt at have et stærkt kodeord, da det kan være afgørende for din digitale sikkerhed. Det beskytter dine personlige oplysninger og forhindrer uautoriseret adgang. Når man skal vælge et kodeord, er der nogle ting, man skal have i tankerne for at sikre sig selv bedst muligt.
+                <br> <br>Længden: Jo længere et kodeord er, jo sværere er det at gætte.
+               <br><br> Tegn og tal: Brug gerne en blanding af store og små bogstaver samt specialtegn og tal, da det øger kompleksiteten.</p>
+            </section>
+                <section class="wrapper">
                 <section class="kode">
                     <input type="password" placeholder="Indsæt">
                     <i class="fa-solid fa-eye"></i>

@@ -1,12 +1,5 @@
 // nav bar
-document.addEventListener("DOMContentLoaded", function() {
-    const navToggle = document.querySelector('.navToggle');
-    const desktopNav = document.querySelector('.desktop-nav');
 
-    navToggle.addEventListener('click', function() {
-        desktopNav.classList.toggle('toggleShow');
-    });
-});
 
 
 // Slider med tips til en god kode
